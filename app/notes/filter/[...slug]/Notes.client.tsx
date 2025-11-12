@@ -27,7 +27,7 @@ const NotesClient = ({ tag }: NotesClientProps) => {
   });
   
   const router = useRouter();
-  const close = () => router.push('/notes/action/create');
+  const goToCreateNote = () => router.push('/notes/action/create');
   
   const handleSearch = useDebouncedCallback((search: string) => {
     setSearchValue(search)
@@ -39,8 +39,8 @@ const NotesClient = ({ tag }: NotesClientProps) => {
       <div className={css.app}>
         <header className={css.toolbar}>
           <SearchBox onSearch={handleSearch} searchValue={searchValue} />
-          {data && data?.totalPages > 1 && <Pagination page={currentPage} onChangeFn={(selectedPage) => setCurrentPage(selectedPage)} total={data?.totalPages} />}
-          <button className={css.button} onClick={close}>Create note +</button>
+          {data && data?.totalPages > 1 && <Pagination page={currentPage} onChange={(selectedPage) => setCurrentPage(selectedPage)} total={data?.totalPages} />}
+          <button className={css.button} onClick={goToCreateNote}>Create note +</button>
         </header>
         <main>
           {data && data?.notes.length > 0 && <NoteList noteSet={data?.notes} />}

@@ -4,10 +4,10 @@ import css from './CreateNote.module.css';
 
 export const metadata: Metadata = {
   title: "Create note",
-  description: "Сreate your own notes to manege your time",
+  description: "Create your own notes to manage your time",
   openGraph: {
       title: "Create note",
-      description: "Сreate your own notes to manege your time",
+      description: "Create your own notes to manage your time",
       url: "https://08-zustand-sandy-six.vercel.app/notes/action/create",
       siteName: 'NoteHub',
       images: [
